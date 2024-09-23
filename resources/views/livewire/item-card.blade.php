@@ -5,6 +5,7 @@
             <img src="{{asset('products-images/spray.jpg')}}" alt="" class="object-cover h-48 rounded w-96"  />
         </div>
         <div>
+            <h2 class="p-1 font-semibold text-1xl line-clamp-3">Product Title</h2>
             <h2 class="px-3 line-clamp-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Velit molestias obcaecati, fugiat suscipit qui quas excepturi officia commodi sequi beatae tempore. Quidem voluptate eius minus corporis quae voluptas quasi atque.</h2>
             <div class="flex justify-between gap-3 px-3 py-2">
                 <div class="p-1 rounded-md bg-emerald-200">
