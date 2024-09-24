@@ -1,3 +1,3 @@
 <div>
-    hellow from admin panel.
+    <livewire:bread-crumb :url="$currentURL" />
 </div>

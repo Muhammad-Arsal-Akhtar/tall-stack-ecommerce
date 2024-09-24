@@ -11,8 +11,6 @@
 
     </head>
     <body>
-        <livewire:header />
-
             <!-- ========== MAIN CONTENT ========== -->
             <!-- Breadcrumb -->
             <div
@@ -152,6 +150,5 @@
             <!-- End Content -->
             <!-- ========== END MAIN CONTENT ========== -->
         
-        <livewire:footer />
     </body>
 </html>
