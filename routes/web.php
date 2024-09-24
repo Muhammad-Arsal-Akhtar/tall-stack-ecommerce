@@ -5,6 +5,7 @@ use App\Livewire\ProductDetails;
 use App\Livewire\AdminDashboard;
 use App\Livewire\ManageProduct;
 use App\Livewire\ManageOrder;
+use App\Livewire\AddProductForm;
 
 Route::get('/', function () {
     return view('welcome');
@@ -12,9 +13,15 @@ Route::get('/', function () {
 
 Route::get('product-details', ProductDetails::class);
 
-Route::get('admin/dashboard', AdminDashboard::class)->middleware(['admin'])->name('dashboard');
 
-Route::get('admin/products', ManageProduct::class)->middleware(['admin'])->name('products');
 
-Route::get('admin/orders', ManageOrder::class)->middleware(['admin'])->name('orders');
+
+Route::middleware(['admin'])->prefix('admin')->group(function () {
+    Route::get('/dashboard', AdminDashboard::class)->name('dashboard');
+    Route::get('/products', ManageProduct::class)->name('products');
+    Route::get('/orders', ManageOrder::class)->name('orders');
+    Route::get('/add/product', AddProductForm::class);
+
+});
+
 
