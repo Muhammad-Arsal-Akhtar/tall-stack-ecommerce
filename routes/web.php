@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Livewire\ProductDetails;
 use App\Livewire\AdminDashboard;
 use App\Livewire\ManageProduct;
+use App\Livewire\ManageOrder;
 
 Route::get('/', function () {
     return view('welcome');
