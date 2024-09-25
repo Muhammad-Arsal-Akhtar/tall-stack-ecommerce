@@ -4,7 +4,7 @@
     <div class="max-w-4xl px-4 py-10 mx-auto sm:px-6 lg:px-8 lg:py-14">
         <!-- Card -->
         <div class="p-4 bg-teal-100 shadow rounded-xl sm:p-7 dark:bg-neutral-900">
-            <form wire:submit="saveNewProduct">
+            <form wire:submit="saveNewCategory">
                 <!-- Section -->
                 <div
                     class="grid gap-2 py-8 border-t border-gray-200 sm:grid-cols-12 sm:gap-4 first:pt-0 last:pb-0 first:border-transparent dark:border-neutral-700 dark:first:border-transparent">
