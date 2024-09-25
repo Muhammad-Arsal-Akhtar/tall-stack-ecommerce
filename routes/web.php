@@ -7,6 +7,7 @@ use App\Livewire\ManageProduct;
 use App\Livewire\ManageOrder;
 use App\Livewire\ManageCategory;
 use App\Livewire\AddProductForm;
+use App\Livewire\AddCategoryForm;
 
 Route::get('/', function () {
     return view('welcome');
@@ -21,6 +22,7 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::get('/orders', ManageOrder::class)->name('orders');
     Route::get('/add/product', AddProductForm::class);
     Route::get('/category', ManageCategory::class)->name('category');
+    Route::get('/add/category', AddCategoryForm::class);
 
 });
 

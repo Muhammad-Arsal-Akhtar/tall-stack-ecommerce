@@ -5,6 +5,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Tall Stack Ecommerce</title>
+        <style>
+            .livewire-navigate-progress-bar {
+                background-color: #0D9488 !important; /* Example: Sky blue color */
+            }
+        </style>
 
         @vite('resources/css/app.css')
         @vite('resources/js/app.js')
@@ -85,7 +90,7 @@
                         <nav class="flex flex-col flex-wrap w-full p-3 hs-accordion-group" data-hs-accordion-always-open>
                             <ul class="flex flex-col space-y-1">
                                 <li>
-                                    <a class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-700 dark:text-white {{ request()->is('admin/dashboard') ? 'bg-gray-100' : '' }}"
+                                    <a wire:navigate class="flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:bg-neutral-700 dark:text-white {{ request()->is('admin/dashboard') ? 'bg-gray-100' : '' }}"
                                         href="{{ url('admin/dashboard') }}">
                                         <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24"
                                             height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -98,7 +103,7 @@
                                 </li>
         
                                 
-                                <li><a class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-300 {{ request()->is('admin/products') ? 'bg-gray-100' : '' }}"
+                                <li><a wire:navigate class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-700 dark:text-neutral-200 dark:hover:text-neutral-300 {{ request()->is('admin/products') ? 'bg-gray-100' : '' }}"
                                         href="{{url('admin/products')}}">
                                         <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24"
                                             height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -116,7 +121,7 @@
                                         </svg>
                                         Products
                                     </a></li>
-                                    <li><a class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300 {{ request()->is('admin/category') ? 'bg-gray-100' : '' }}"
+                                    <li><a wire:navigate class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300 {{ request()->is('admin/category') ? 'bg-gray-100' : '' }}"
                                         href="{{ url('admin/category') }}">
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
                                             <path stroke-linecap="round" stroke-linejoin="round" d="M9.568 3H5.25A2.25 2.25 0 0 0 3 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 0 0 5.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 0 0 9.568 3Z" />
@@ -125,7 +130,7 @@
                                           
                                         Category
                                 </a></li>
-                                <li><a class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300 {{ request()->is('admin/orders') ? 'bg-gray-100' : '' }}"
+                                <li><a wire:navigate class="w-full flex items-center gap-x-3.5 py-2 px-2.5 text-sm text-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-neutral-900 dark:text-neutral-200 dark:hover:text-neutral-300 {{ request()->is('admin/orders') ? 'bg-gray-100' : '' }}"
                                         href="{{ url('admin/orders') }}">
                                         <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24"
                                             height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
