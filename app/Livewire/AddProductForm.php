@@ -6,6 +6,7 @@ use Livewire\Component;
 use Livewire\Attributes\Validate;
 use Livewire\WithFileUploads;
 use App\Models\Product;
+use App\Models\Category;
 
 class AddProductForm extends Component
 {
@@ -25,6 +26,14 @@ class AddProductForm extends Component
     #[Validate('required|image|max:1024|mime:jpg,png')]
     public $photo;
 
+    #[Validate('required')] 
+    public $category_id;
+
+    public $categories;
+
+    public function mount(){
+        $this->categories = Category::all();
+    }
 
     public function render()
     {
@@ -38,12 +47,14 @@ class AddProductForm extends Component
         
         $this->validate();
 
+        $path = $this->photo->store('photos');
+
         $product = new Product;
         $product->name = $this->name;
         $product->price = $this->price;
         $product->description = $this->description;
-        $product->image = $this->photo;
-        $product->category_id = $this->name;
+        $product->image = $path;
+        $product->category_id = $this->category_id;
         $product->save();
 
         return $this->redirect('/admin/products', navigate: true);

@@ -60,16 +60,15 @@
                   <!-- End Col -->
                   
                   <div class="sm:col-span-9">
-                      <select wire:model="category" id="af-submit-application-category"
+                      <select wire:model="category_id" id="af-submit-application-category"
                           class="block w-full px-3 py-2 text-sm border-gray-200 rounded-lg shadow-sm pe-11 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600">
                           <option value="">Select a Category</option>
-                          <option value="category1">1</option>
-                          <option value="category2">2</option>
-                          <option value="category3">3</option>
-                          <!-- Add more options as needed -->
+                          @foreach ($categories as $category)
+                            <option value="{{$category->id}}" wire:key="{{$category->id}}">{{$category->name}}</option>
+                          @endforeach
                       </select>
                   
-                      @error('category')
+                      @error('category_id')
                           <span class="text-red-500">{{ $message }}</span>
                       @enderror
                   </div>
