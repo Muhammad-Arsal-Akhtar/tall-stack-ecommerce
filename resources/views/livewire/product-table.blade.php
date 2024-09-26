@@ -21,10 +21,9 @@
 
                             <div>
                                 <div class="inline-flex gap-x-2">
-                                    <a class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-800 bg-white border border-gray-200 rounded-lg shadow-sm gap-x-2 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
-                                        href="#">
-                                        View all
-                                    </a>
+                                    <div class="max-w-sm space-y-3">
+                                        <input type="text" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-teal-500 focus:ring-teal-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="Search Product">
+                                    </div>
 
                                     <a class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-teal-600 border border-transparent rounded-lg gap-x-2 hover:bg-teal-700 focus:outline-none focus:bg-teal-700 disabled:opacity-50 disabled:pointer-events-none"
                                         href="/admin/add/product">
@@ -46,10 +45,10 @@
                             <thead class="bg-gray-50 dark:bg-neutral-800">
                                 <tr>
                                     <th scope="col" class="px-5 py-3 ps-6 lg:ps-3 xl:ps-0 pe-6 text-start">
-                                        <div class="flex items-center gap-x-2">
+                                        <div class="flex items-center px-5 gap-x-2">
                                             <span
                                                 class="text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200">
-                                                Name
+                                                Product Name
                                             </span>
                                         </div>
                                     </th>
@@ -58,7 +57,7 @@
                                         <div class="flex items-center gap-x-2">
                                             <span
                                                 class="text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200">
-                                                Description
+                                                Product Description
                                             </span>
                                         </div>
                                     </th>
@@ -76,7 +75,7 @@
                                         <div class="flex items-center gap-x-2">
                                             <span
                                                 class="text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200">
-                                                Created At
+                                                Category
                                             </span>
                                         </div>
                                     </th>
@@ -85,12 +84,12 @@
                                         <div class="flex items-center gap-x-2">
                                             <span
                                                 class="text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200">
-                                                Updated At
+                                                Created At
                                             </span>
                                         </div>
                                     </th>
 
-                                    <th scope="col" class="px-6 py-3 text-end"></th>
+                                    <th scope="col" class="px-6 py-3 text-end">Actions</th>
                                 </tr>
                             </thead>
 
@@ -157,6 +156,11 @@
                                             <a class="inline-flex items-center text-sm font-medium text-blue-600 gap-x-1 decoration-2 hover:underline focus:outline-none focus:underline dark:text-blue-500"
                                                 href="#">
                                                 Edit
+                                            </a>
+
+                                            <a class="inline-flex items-center text-sm font-medium text-red-600 gap-x-1 decoration-2 hover:underline focus:outline-none focus:underline dark:text-red-500"
+                                                href="#">
+                                                Delete
                                             </a>
                                         </div>
                                     </td>
@@ -225,6 +229,11 @@
                                             <a class="inline-flex items-center text-sm font-medium text-blue-600 gap-x-1 decoration-2 hover:underline focus:outline-none focus:underline dark:text-blue-500"
                                                 href="#">
                                                 Edit
+                                            </a>
+
+                                            <a class="inline-flex items-center text-sm font-medium text-red-600 gap-x-1 decoration-2 hover:underline focus:outline-none focus:underline dark:text-red-500"
+                                                href="#">
+                                                Delete
                                             </a>
                                         </div>
                                     </td>
