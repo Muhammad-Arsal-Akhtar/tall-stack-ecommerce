@@ -17,13 +17,13 @@ class AddProductForm extends Component
     #[Validate('required')] 
     public $name;
 
-    #[Validate('required|integer')] 
+    #[Validate('required|numeric')] 
     public $price;
 
     #[Validate('required')] 
     public $description;
 
-    #[Validate('required|image|max:1024|mime:jpg,png')]
+    #[Validate('required|image|max:1024|mimes:jpeg,png')]
     public $photo;
 
     #[Validate('required')] 
