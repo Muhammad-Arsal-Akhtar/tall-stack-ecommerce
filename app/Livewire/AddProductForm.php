@@ -23,7 +23,7 @@ class AddProductForm extends Component
     #[Validate('required')] 
     public $description;
 
-    #[Validate('required|image|max:1024|mimes:jpeg,png')]
+    #[Validate('nullable|image|max:1024|mimes:jpeg,png')]
     public $photo;
 
     #[Validate('required')] 
@@ -47,7 +47,7 @@ class AddProductForm extends Component
         
         $this->validate();
 
-        $path = $this->photo->store('photos');
+        $path = $this->photo->store('photos', 'public');
 
         $product = new Product;
         $product->name = $this->name;
