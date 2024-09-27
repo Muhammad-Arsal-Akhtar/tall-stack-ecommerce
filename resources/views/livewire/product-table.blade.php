@@ -49,7 +49,7 @@
                                         <div class="flex items-center px-5 gap-x-2">
                                             <span
                                                 class="text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200">
-                                                Product Name
+                                                Name
                                             </span>
                                         </div>
                                     </th>
@@ -58,7 +58,7 @@
                                         <div class="flex items-center gap-x-2">
                                             <span
                                                 class="text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200">
-                                                Product Description
+                                                Description
                                             </span>
                                         </div>
                                     </th>
@@ -170,7 +170,7 @@
                         <div
                             class="grid gap-3 px-6 py-4 border-t border-gray-200 md:flex md:justify-between md:items-center dark:border-neutral-700">
                             <div class="max-w-sm space-y-3">
-                                <select class="block px-3 py-2 text-sm border-gray-200 rounded-lg pe-9 focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400" wire:model="perPage">
+                                <select class="block px-3 py-2 text-sm border-gray-200 rounded-lg pe-9 focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400" wire:model.change="perPage">
                                   <option value="2">2</option>
                                   <option value="3">3</option>
                                   <option value="5">5</option>
