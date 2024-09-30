@@ -176,13 +176,24 @@
                                         </td>
                                         <td class="size-px whitespace-nowrap">
                                             <div class="px-6 py-1.5">
-                                                <a class="inline-flex items-center text-sm font-medium text-blue-600 gap-x-1 decoration-2 hover:underline focus:outline-none focus:underline dark:text-blue-500"
+                                                <a wire:navigate class="inline-flex items-center text-sm font-medium text-blue-600 gap-x-1 decoration-2 hover:underline focus:outline-none focus:underline dark:text-blue-500"
                                                 href="{{ url('admin/edit/' . $product->id . '/product') }}">
                                                     Edit
                                                 </a>
 
-                                                <a class="inline-flex items-center text-sm font-medium text-red-600 gap-x-1 decoration-2 hover:underline focus:outline-none focus:underline dark:text-red-500"
-                                                    href="#">
+                                                {{-- <a class="inline-flex items-center text-sm font-medium text-red-600 cursor-pointer gap-x-1 decoration-2 hover:underline focus:outline-none focus:underline dark:text-red-500" --}}
+                                                {{-- @click="$dispatch('open-delete-modal', {{$product->id}})" --}}
+                                                {{-- aria-haspopup="dialog" 
+                                                aria-expanded="false" aria-controls="hs-slide-up-animation-modal"  
+                                                data-hs-overlay="#hs-slide-up-animation-modal" --}}
+                                                {{-- > --}}
+                                                    {{-- <button type="button" class="inline-flex items-center px-4 py-3 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-lg gap-x-2 hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none" aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-slide-up-animation-modal" data-hs-overlay="#hs-slide-up-animation-modal">
+                                                        Open modal
+                                                      </button> --}}
+                                                    {{-- Delete
+                                                </a> --}}
+                                                <!-- Open Modal Button -->
+                                                <a @click="$dispatch('open-delete-modal', {{$product->id}})" class="inline-flex items-center text-sm font-medium text-red-600 cursor-pointer gap-x-1 decoration-2 hover:underline focus:outline-none focus:underline dark:text-red-500" >
                                                     Delete
                                                 </a>
                                             </div>
@@ -239,4 +250,6 @@
         <!-- End Card -->
     </div>
     <!-- End Table Section -->
+    <x-delete-modal />
+    
 </div>

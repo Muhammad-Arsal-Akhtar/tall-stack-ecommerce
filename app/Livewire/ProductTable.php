@@ -31,6 +31,12 @@ class ProductTable extends Component
         $this->sortBy = 'ASC';
     }
 
+    public function deleteProduct($id){
+        // $deletedProduct = Product::findOrFail($id)->delete();
+
+        $this->dispatch('close-product-deleted');
+    }
+
     public function render()
     {
         $path = request()->path();
