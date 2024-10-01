@@ -1,6 +1,6 @@
 <div>
     <div class="p-1 bg-gray-200 rounded-lg shadow-sm hover:border border-emerald-400">
-        <a wire:navigate href="{{ url('product-details') }}">
+        <a wire:navigate href="{{ url('product-details/'.$product->id) }}">
         <div>
             <img src="{{ $product->image ? Storage::url($product->image) : asset('products-images/spray.jpg')}}" alt="" class="object-cover h-48 rounded w-96"  />
         </div>
