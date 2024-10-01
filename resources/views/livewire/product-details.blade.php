@@ -23,6 +23,8 @@
                 </svg>   
                 <span>Add to Cart</span>
                 </a>
+
+             {{-- <livewire:shopping-cart-icon />    --}}
         </div>
     </div>
         
