@@ -9,12 +9,14 @@ use App\Livewire\ManageCategory;
 use App\Livewire\AddProductForm;
 use App\Livewire\AddCategoryForm;
 use App\Livewire\EditProduct;
+use App\Livewire\ShoppingCartDetails;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
 Route::get('product-details/{product_id}', ProductDetails::class);
+Route::get('shopping-cart', ShoppingCartDetails::class);
 
 
 Route::middleware(['admin'])->prefix('admin')->group(function () {

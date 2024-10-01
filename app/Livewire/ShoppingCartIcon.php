@@ -4,6 +4,8 @@ namespace App\Livewire;
 
 use Livewire\Component;
 use Illuminate\Support\Facades\Auth;
+use App\Models\ShoppingCart;
+use Livewire\Attributes\On; 
 
 class ShoppingCartIcon extends Component
 {
@@ -13,6 +15,7 @@ class ShoppingCartIcon extends Component
         $this->updateCartCount();
     }
 
+    #[On('cart-updated')] 
     public function updateCartCount(){
         $this->cartCount = ShoppingCart::where('user_id', Auth::id())->sum('quantity');
     }
