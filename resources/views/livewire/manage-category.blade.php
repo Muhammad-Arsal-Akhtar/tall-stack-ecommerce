@@ -112,7 +112,7 @@
 
                                                 <!-- Open Modal Button -->
                                                 <a
-                                                {{-- @click="$dispatch('open-delete-modal', {{$product->id}})" --}}
+                                                @click="$dispatch('open-delete-modal', {{$category->id}})"
                                                  class="inline-flex items-center text-sm font-medium text-red-600 cursor-pointer gap-x-1 decoration-2 hover:underline focus:outline-none focus:underline dark:text-red-500" >
                                                     Delete
                                                 </a>
@@ -149,5 +149,11 @@
         <!-- End Card -->
     </div>
     <!-- End Table Section -->
+
+    <x-delete-modal>
+        <x-slot:title>
+            Category
+        </x-slot:title>
+    </x-delete-modal>
 </div>
 

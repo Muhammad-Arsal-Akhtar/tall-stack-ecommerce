@@ -228,6 +228,10 @@
         <!-- End Card -->
     </div>
     <!-- End Table Section -->
-    <x-delete-modal />
+    <x-delete-modal>
+        <x-slot:title>
+            Product
+        </x-slot:title>
+    </x-delete-modal>
     
 </div>

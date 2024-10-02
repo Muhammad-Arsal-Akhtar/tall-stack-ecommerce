@@ -1,12 +1,12 @@
 <div>
-  <div x-data="{ isOpen: false, itemId: null }" @open-delete-modal.window="isOpen = true; itemId = $event.detail; console.log(itemId)" @close-product-deleted.window="isOpen = false">
+  <div x-data="{ isOpen: false, itemId: null }" @open-delete-modal.window="isOpen = true; itemId = $event.detail; console.log(itemId)" @close-modal-deleted.window="isOpen = false">
     <!-- Modal -->
     <div x-show="isOpen" x-cloak @keydown.window.escape="isOpen = false" id="hs-basic-modal" class="size-full fixed top-0 start-0 z-[80] opacity-100 overflow-x-hidden transition-all overflow-y-auto pointer-events-auto" tabindex="-1" aria-labelledby="hs-basic-modal-label">
       <div class="m-3 sm:max-w-lg sm:w-full sm:mx-auto">
         <div class="flex flex-col bg-white border shadow-sm pointer-events-auto rounded-xl dark:bg-neutral-800 dark:border-neutral-700 dark:shadow-neutral-700/70">
           <div class="flex items-center justify-between px-4 py-3 border-b dark:border-neutral-700">
             <h3 id="hs-basic-modal-label" class="font-bold text-gray-800 dark:text-white">
-              Product Delete
+              {{$title}} Delete
             </h3>
             <!-- Close Button -->
             <button @click="isOpen = false" type="button" class="inline-flex items-center justify-center text-gray-800 bg-gray-100 border border-transparent rounded-full size-8 gap-x-2 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:hover:bg-neutral-600 dark:text-neutral-400 dark:focus:bg-neutral-600" aria-label="Close">
@@ -27,7 +27,7 @@
             <button @click="isOpen = false" type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium text-gray-800 bg-white border border-gray-200 rounded-lg shadow-sm gap-x-2 hover:bg-gray-50 focus:outline-none focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-800 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-700 dark:focus:bg-neutral-700">
               Close
             </button>
-            <button @click="$wire.deleteProduct(itemId)" type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-red-600 border border-transparent rounded-lg gap-x-2 hover:bg-red-700 focus:outline-none focus:bg-red-700 disabled:opacity-50 disabled:pointer-events-none">
+            <button @click="$wire.deleteItem(itemId)" type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-red-600 border border-transparent rounded-lg gap-x-2 hover:bg-red-700 focus:outline-none focus:bg-red-700 disabled:opacity-50 disabled:pointer-events-none">
               Delete It!
             </button>
           </div>
