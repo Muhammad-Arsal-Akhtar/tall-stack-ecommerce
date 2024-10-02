@@ -26,7 +26,7 @@ class ShoppingCartDetails extends Component
         
         $cardItem = ShoppingCart::where('user_id', Auth::id())->where('product_id', $product_id)->first();
 
-        if($cardItem->isNotEmpty()){
+        if($cardItem){
             $cardItem->quantity = $cardItem->quantity + 1;
             $cardItem->save();
         }else{
