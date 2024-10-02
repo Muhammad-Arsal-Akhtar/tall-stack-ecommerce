@@ -9,6 +9,7 @@ use App\Livewire\ManageCategory;
 use App\Livewire\AddProductForm;
 use App\Livewire\AddCategoryForm;
 use App\Livewire\EditProduct;
+use App\Livewire\EditCategory;
 use App\Livewire\ShoppingCartDetails;
 
 Route::get('/', function () {
@@ -27,6 +28,7 @@ Route::middleware(['admin'])->prefix('admin')->group(function () {
     Route::get('/edit/{id}/product', EditProduct::class);
     Route::get('/category', ManageCategory::class)->name('category');
     Route::get('/add/category', AddCategoryForm::class);
+    Route::get('/edit/{id}/category', EditCategory::class);
 
 });
 

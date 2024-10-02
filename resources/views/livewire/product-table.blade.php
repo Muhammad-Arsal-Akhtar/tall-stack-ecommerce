@@ -1,4 +1,4 @@
-<div>
+<div> 
     <livewire:bread-crumb :url="$this->currentURL"  />
     <!-- Table Section -->
     <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
@@ -45,7 +45,7 @@
                         <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
                             <thead class="bg-gray-50 dark:bg-neutral-800">
                                 <tr>
-                                    <th scope="col" class="px-5 py-3 ps-6 lg:ps-3 xl:ps-0 pe-6 text-start">
+                                    <th scope="col" class="px-5 py-3 text-center ps-6 lg:ps-3 xl:ps-0 pe-6">
                                         <div class="flex items-center px-5 gap-x-2">
                                             <span
                                                 class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200">
@@ -57,7 +57,7 @@
                                         </div>
                                     </th>
 
-                                    <th scope="col" class="px-6 py-3 text-start">
+                                    <th scope="col" class="px-6 py-3 text-center">
                                         <div class="flex items-center gap-x-2">
                                             <span
                                                 class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200">
@@ -69,7 +69,7 @@
                                         </div>
                                     </th>
 
-                                    <th scope="col" class="px-6 py-3 text-start">
+                                    <th scope="col" class="px-6 py-3 text-center">
                                         <div class="flex items-center gap-x-2">
                                             <span
                                                 class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200">
@@ -81,7 +81,7 @@
                                         </div>
                                     </th>
 
-                                    <th scope="col" class="px-6 py-3 text-start">
+                                    <th scope="col" class="px-6 py-3 text-center">
                                         <div class="flex items-center gap-x-2">
                                             <span
                                                 class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200">
@@ -93,7 +93,7 @@
                                         </div>
                                     </th>
 
-                                    <th scope="col" class="px-6 py-3 text-start">
+                                    <th scope="col" class="px-6 py-3 text-center">
                                         <div class="flex items-center gap-x-2">
                                             <button wire:click="sortSetting('created_at')"
                                                 class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200" >
@@ -117,7 +117,7 @@
                                         </div>
                                     </th>
 
-                                    <th scope="col" class="px-6 py-3 text-end">Actions</th>
+                                    <th scope="col" class="px-6 py-3 text-center">Actions</th>
                                 </tr>
                             </thead>
 
@@ -205,40 +205,18 @@
                         <!-- End Table -->
 
                         <!-- Footer -->
-                        <div
-                            class="grid gap-3 px-6 py-4 border-t border-gray-200 md:flex md:justify-between md:items-center dark:border-neutral-700">
+                        <div class="grid gap-3 px-6 py-4 border-t border-gray-200 md:flex md:justify-between md:items-center dark:border-neutral-700">
                             <div class="max-w-sm space-y-3">
                                 <select class="block px-3 py-2 text-sm border-gray-200 rounded-lg pe-9 focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400" wire:model.change="perPage">
                                   <option value="2">2</option>
                                   <option value="3">3</option>
                                   <option value="5">5</option>
                                 </select>
-                              </div>
+                            </div>
 
                             <div>
                                 <div class="inline-flex gap-x-2">
                                     {{ $products->links() }}
-                                    {{-- <button type="button"
-                                        class="py-1.5 px-2 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800">
-                                        <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
-                                            width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path d="m15 18-6-6 6-6" />
-                                        </svg>
-                                        Prev
-                                    </button>
-
-                                    <button type="button"
-                                        class="py-1.5 px-2 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg border border-gray-200 bg-white text-gray-800 shadow-sm hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none focus:outline-none focus:bg-gray-50 dark:bg-transparent dark:border-neutral-700 dark:text-neutral-300 dark:hover:bg-neutral-800 dark:focus:bg-neutral-800">
-                                        Next
-                                        <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
-                                            width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path d="m9 18 6-6-6-6" />
-                                        </svg>
-                                    </button> --}}
                                 </div>
                             </div>
                         </div>

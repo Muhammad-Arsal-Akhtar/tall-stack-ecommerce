@@ -5,11 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Tall Stack Ecommerce</title>
-        <style>
-            .livewire-navigate-progress-bar {
-                background-color: #0D9488 !important; /* Example: Sky blue color */
-            }
-        </style>
 
         @vite('resources/css/app.css')
         @vite('resources/js/app.js')
