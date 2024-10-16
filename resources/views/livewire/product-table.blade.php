@@ -270,6 +270,8 @@
         <!-- End Card -->
     </div>
     <!-- End Table Section -->
+
+     {{-- Single Modal for deletion of Data --}}
     <x-delete-modal>
         <x-slot:title>
             Product
