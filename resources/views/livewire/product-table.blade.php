@@ -46,74 +46,122 @@
                             <thead class="bg-gray-50 dark:bg-neutral-800">
                                 <tr>
                                     <th scope="col" class="px-5 py-3 text-center ps-6 lg:ps-3 xl:ps-0 pe-6">
-                                        <div class="flex items-center px-5 gap-x-2">
-                                            <span
-                                                class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200">
+                                        <div class="flex items-center justify-center px-5 gap-x-2">
+                                            <button wire:click="sortSetting('name')"
+                                                class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200" >
                                                 Name
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
-                                                </svg>  
-                                            </span>
+                                                    @if ($sortColumn != 'name')
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+                                                        </svg> 
+                                                    @elseif ($sortBy == 'ASC')   
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+                                                    </svg>
+                                                    @else
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                                    </svg>
+                                                        
+                                                    @endif
+                                                
+                                            </button>
                                         </div>
                                     </th>
 
                                     <th scope="col" class="px-6 py-3 text-center">
-                                        <div class="flex items-center gap-x-2">
-                                            <span
-                                                class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200">
+                                        <div class="flex items-center justify-center gap-x-2">
+                                            <button wire:click="sortSetting('description')"
+                                                class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200" >
                                                 Description
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
-                                                </svg> 
-                                            </span>
+                                                    @if ($sortColumn != 'description')
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+                                                        </svg> 
+                                                    @elseif ($sortBy == 'ASC')   
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+                                                    </svg>
+                                                    @else
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                                    </svg>
+                                                        
+                                                    @endif
+                                                
+                                            </button>
                                         </div>
                                     </th>
 
                                     <th scope="col" class="px-6 py-3 text-center">
-                                        <div class="flex items-center gap-x-2">
-                                            <span
-                                                class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200">
+                                        <div class="flex items-center justify-center gap-x-2">
+                                            <button wire:click="sortSetting('price')"
+                                                class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200" >
                                                 Price
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
-                                                </svg> 
-                                            </span>
+                                                    @if ($sortColumn != 'price')
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+                                                        </svg> 
+                                                    @elseif ($sortBy == 'ASC')   
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+                                                    </svg>
+                                                    @else
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                                    </svg>
+                                                        
+                                                    @endif
+                                                
+                                            </button>
                                         </div>
                                     </th>
 
                                     <th scope="col" class="px-6 py-3 text-center">
-                                        <div class="flex items-center gap-x-2">
-                                            <span
-                                                class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200">
+                                        <div class="flex items-center justify-center gap-x-2">
+                                            <button wire:click="sortSetting('category_id')"
+                                                class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200" >
                                                 Category
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
-                                                </svg> 
-                                            </span>
+                                                    @if ($sortColumn != 'category_id')
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+                                                        </svg> 
+                                                    @elseif ($sortBy == 'ASC')   
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+                                                    </svg>
+                                                    @else
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                                    </svg>
+                                                        
+                                                    @endif
+                                                
+                                            </button>
                                         </div>
                                     </th>
 
                                     <th scope="col" class="px-6 py-3 text-center">
-                                        <div class="flex items-center gap-x-2">
+                                        <div class="flex items-center justify-center gap-x-2">
                                             <button wire:click="sortSetting('created_at')"
                                                 class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200" >
                                                 Created At
-                                                @if ($sortColumn != 'created_at')
-                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
-                                                    </svg> 
-                                                @elseif ($sortBy == 'ASC')   
-                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
-                                                  </svg>
-                                                @else
-                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-                                                  </svg>
-                                                    
-                                                @endif
+                                                    @if ($sortColumn != 'created_at')
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+                                                        </svg> 
+                                                    @elseif ($sortBy == 'ASC')   
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+                                                    </svg>
+                                                    @else
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                                    </svg>
+                                                        
+                                                    @endif
                                                 
-                                                </button>
+                                            </button>
                                         </div>
                                     </th>
 
@@ -128,7 +176,7 @@
                                             <div class="py-3 ps-6 lg:ps-3 xl:ps-0 pe-6">
                                                 <div class="flex items-center gap-x-3">
                                                     <img class="inline-block size-[38px] rounded-full"
-                                                        src="https://images.unsplash.com/photo-1531927557220-a9e23c1e4794?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=320&h=320&q=80"
+                                                        src="{{asset('storage/'.$product->image)}}"
                                                         alt="Avatar">
                                                     <div class="grow">
                                                         <span
@@ -159,13 +207,7 @@
                                         <td class="size-px whitespace-nowrap">
                                             <div class="px-6 py-3">
                                                 <div class="flex items-center gap-x-3">
-                                                    <span class="text-xs text-gray-500 dark:text-neutral-500">1/{{$product->category_id}}</span>
-                                                    <div
-                                                        class="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-neutral-700">
-                                                        <div class="flex flex-col justify-center overflow-hidden bg-gray-800 dark:bg-neutral-200"
-                                                            role="progressbar" style="width: 25%" aria-valuenow="25"
-                                                            aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
+                                                    <span class="text-xs text-gray-500 dark:text-neutral-500">{{ ucfirst($product->category->name)}}</span>
                                                 </div>
                                             </div>
                                         </td>
