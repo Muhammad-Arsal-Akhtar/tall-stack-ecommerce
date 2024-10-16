@@ -46,13 +46,25 @@
                                 <tr>
                                     <th scope="col" class="px-5 py-3 ps-6 lg:ps-3 xl:ps-0 pe-6 text-start">
                                         <div class="flex items-center justify-center px-5 gap-x-2">
-                                            <span
-                                                class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200">
+                                            <button wire:click="sortSetting('name')"
+                                                class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200" >
                                                 Name
-                                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
-                                                </svg>  
-                                            </span>
+                                                    @if ($sortColumn != 'name')
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9" />
+                                                        </svg> 
+                                                    @elseif ($sortBy == 'ASC')   
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 15.75 7.5-7.5 7.5 7.5" />
+                                                    </svg>
+                                                    @else
+                                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                                    </svg>
+                                                        
+                                                    @endif
+                                                
+                                            </button>
                                         </div>
                                     </th>
 
