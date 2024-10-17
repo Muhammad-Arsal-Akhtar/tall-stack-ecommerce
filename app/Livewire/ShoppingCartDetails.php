@@ -17,18 +17,18 @@ class ShoppingCartDetails extends Component
     public $total;
 
 
-    public function mount(){
-        $this->getCartItems();
-        $this->calculateTotals();
+    public function mount()
+    {
+        $this->getlatestCartDetails();
     }
 
     public function addToCart($product_id){
         
-        $cardItem = ShoppingCart::where('user_id', Auth::id())->where('product_id', $product_id)->first();
+        $cartItem = ShoppingCart::where('user_id', Auth::id())->where('product_id', $product_id)->first();
 
-        if($cardItem){
-            $cardItem->quantity = $cardItem->quantity + 1;
-            $cardItem->save();
+        if($cartItem){
+            $cartItem->quantity = $cartItem->quantity + 1;
+            $cartItem->save();
         }else{
             ShoppingCart::create([
                 'user_id' => Auth::id(),
@@ -40,19 +40,26 @@ class ShoppingCartDetails extends Component
         $this->dispatch('cart-updated');
     }
 
-    public function updateQuantity($cardItemId, $quantity){
-        $cartItem = ShoppingCart::find($cardItemId);
+    public function updateQuantity($cartItemId, $quantity){
+        $cartItem = ShoppingCart::find($cartItemId);
         if($cartItem){
             $cartItem->quantity = $quantity;
             $cartItem->save();
+            $this->getlatestCartDetails();
             $this->dispatch('cart-updated');
         }
     }
 
-    public function removeItem($cardItemId){
-        $cartItem = ShoppingCart::find($cardItemId);
+    public function getlatestCartDetails(){
+        $this->cartItems = $this->getCartItems();
+        $this->calculateTotals();
+    }
+
+    public function removeItem($cartItemId){
+        $cartItem = ShoppingCart::find($cartItemId);
         if($cartItem){
             $cartItem->delete();
+            $this->getlatestCartDetails();
             $this->dispatch('cart-updated');
         }
     }
@@ -72,11 +79,8 @@ class ShoppingCartDetails extends Component
     }
 
 
-    #[On('cart-updated')] 
     public function render()
     {
-        $this->cartItems = $this->getCartItems();
-        $this->calculateTotals();
-        return view('livewire.shopping-cart-details', ['cartItems' => $this->cartItems]);
+        return view('livewire.shopping-cart-details');
     }
 }
