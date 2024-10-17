@@ -23,7 +23,7 @@
           </li>
 
           <li>
-            <a class="text-gray-500 transition hover:text-gray-500/75" href="#"> Contact Us </a>
+            <a class="text-gray-500 transition hover:text-gray-500/75" href="{{route('contact.us')}}"> Contact Us </a>
           </li>
 
         </ul>

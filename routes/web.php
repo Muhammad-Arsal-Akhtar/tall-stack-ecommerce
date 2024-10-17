@@ -11,6 +11,8 @@ use App\Livewire\AddCategoryForm;
 use App\Livewire\EditProduct;
 use App\Livewire\EditCategory;
 use App\Livewire\ShoppingCartDetails;
+use App\Livewire\ContactUs;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,6 +20,7 @@ Route::get('/', function () {
 
 Route::get('product-details/{product_id}', ProductDetails::class);
 Route::get('shopping-cart', ShoppingCartDetails::class);
+Route::get('contact-us', ContactUs::class)->name('contact.us');
 
 
 Route::middleware(['admin'])->prefix('admin')->group(function () {
