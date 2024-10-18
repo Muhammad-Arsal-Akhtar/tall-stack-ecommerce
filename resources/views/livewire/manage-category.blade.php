@@ -6,15 +6,15 @@
             <div class="-m-1.5 overflow-x-auto">
                 <div class="p-1.5 min-w-full inline-block align-middle">
                     <div
-                        class="overflow-hidden bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
+                        class="overflow-hidden bg-white border border-gray-200 shadow-sm rounded-xl">
                         <!-- Header -->
                         <div
-                            class="grid gap-3 px-6 py-4 border-b border-gray-200 md:flex md:justify-between md:items-center dark:border-neutral-700">
+                            class="grid gap-3 px-6 py-4 border-b border-gray-200 md:flex md:justify-between md:items-center">
                             <div>
-                                <h2 class="text-xl font-semibold text-gray-800 dark:text-neutral-200">
+                                <h2 class="text-xl font-semibold text-gray-800">
                                     Category
                                 </h2>
-                                <p class="text-sm text-gray-600 dark:text-neutral-400">
+                                <p class="text-sm text-gray-600">
                                     Add category, edit and more.
                                 </p>
                             </div>
@@ -22,7 +22,7 @@
                             <div>
                                 <div class="inline-flex gap-x-2">
                                     <div class="max-w-sm space-y-3">
-                                        <input wire:model.lazy="search" type="text" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-teal-500 focus:ring-teal-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="Search Category" />
+                                        <input wire:model.lazy="search" type="text" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-teal-500 focus:ring-teal-500 disabled:opacity-50 disabled:pointer-events-none" placeholder="Search Category" />
                                     </div>
                                     
                                     <a class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-teal-600 border border-transparent rounded-lg gap-x-2 hover:bg-teal-700 focus:outline-none focus:bg-teal-700 disabled:opacity-50 disabled:pointer-events-none"
@@ -41,13 +41,13 @@
                         <!-- End Header -->
 
                         <!-- Table -->
-                        <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
-                            <thead class="bg-gray-50 dark:bg-neutral-800">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
                                 <tr>
                                     <th scope="col" class="px-5 py-3 ps-6 lg:ps-3 xl:ps-0 pe-6 text-start">
                                         <div class="flex items-center justify-center px-5 gap-x-2">
                                             <button wire:click="sortSetting('name')"
-                                                class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200" >
+                                                class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase" >
                                                 Name
                                                     @if ($sortColumn != 'name')
                                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -71,7 +71,7 @@
                                     <th scope="col" class="px-6 py-3 text-start">
                                         <div class="flex items-center justify-center gap-x-2">
                                             <button wire:click="sortSetting('created_at')"
-                                                class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200" >
+                                                class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase" >
                                                 Created At
                                                 @if ($sortColumn != 'created_at')
                                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -96,7 +96,7 @@
                                 </tr>
                             </thead>
 
-                            <tbody class="divide-y divide-gray-200 dark:divide-neutral-700">
+                            <tbody class="divide-y divide-gray-200">
                                 @foreach ($categories as $category)
                                     <tr>
                                         <td class="px-5 size-px whitespace-nowrap">
@@ -104,7 +104,7 @@
                                                 <div class="flex items-center gap-x-3">
                                                     <div class="grow">
                                                         <span
-                                                            class="block text-sm font-semibold text-gray-800 dark:text-neutral-200">{{ ucfirst($category->name) }}</span>
+                                                            class="block text-sm font-semibold text-gray-800">{{ ucfirst($category->name) }}</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -112,12 +112,12 @@
 
                                         <td class="size-px whitespace-nowrap">
                                             <div class="flex items-center justify-center px-6 py-3">
-                                                <span class="text-sm text-gray-500 dark:text-neutral-500">{{$category->created_at}}</span>
+                                                <span class="text-sm text-gray-500">{{$category->created_at}}</span>
                                             </div>
                                         </td>
                                         <td class="size-px whitespace-nowrap">
                                             <div class="px-6 py-1.5 flex items-center justify-evenly">
-                                                <a wire:navigate class="inline-flex items-center text-sm font-medium text-blue-600 gap-x-1 decoration-2 hover:underline focus:outline-none focus:underline dark:text-blue-500"
+                                                <a wire:navigate class="inline-flex items-center text-sm font-medium text-blue-600 gap-x-1 decoration-2 hover:underline focus:outline-none focus:underline"
                                                     href="edit/{{$category->id}}/category">
                                                     Edit
                                                 </a>
@@ -125,7 +125,7 @@
                                                 <!-- Open Modal Button -->
                                                 <a
                                                 @click="$dispatch('open-delete-modal', {{$category->id}})"
-                                                 class="inline-flex items-center text-sm font-medium text-red-600 cursor-pointer gap-x-1 decoration-2 hover:underline focus:outline-none focus:underline dark:text-red-500" >
+                                                 class="inline-flex items-center text-sm font-medium text-red-600 cursor-pointer gap-x-1 decoration-2 hover:underline focus:outline-none focus:underline" >
                                                     Delete
                                                 </a>
                                             </div>
@@ -138,9 +138,9 @@
 
                         <!-- Footer -->
                         <div
-                            class="grid gap-3 px-6 py-4 border-t border-gray-200 md:flex md:justify-between md:items-center dark:border-neutral-700">
+                            class="grid gap-3 px-6 py-4 border-t border-gray-200 md:flex md:justify-between md:items-center">
                             <div class="max-w-sm space-y-3">
-                                <select class="block px-3 py-2 text-sm border-gray-200 rounded-lg pe-9 focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400" wire:model.change="perPage">
+                                <select class="block px-3 py-2 text-sm border-gray-200 rounded-lg pe-9 focus:border-blue-500 focus:ring-blue-500" wire:model.change="perPage">
                                   <option value="2">2</option>
                                   <option value="3">3</option>
                                   <option value="5">5</option>

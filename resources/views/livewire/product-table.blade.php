@@ -7,15 +7,15 @@
             <div class="-m-1.5 overflow-x-auto">
                 <div class="p-1.5 min-w-full inline-block align-middle">
                     <div
-                        class="overflow-hidden bg-white border border-gray-200 shadow-sm rounded-xl dark:bg-neutral-800 dark:border-neutral-700">
+                        class="overflow-hidden bg-white border border-gray-200 shadow-sm rounded-xl">
                         <!-- Header -->
                         <div
-                            class="grid gap-3 px-6 py-4 border-b border-gray-200 md:flex md:justify-between md:items-center dark:border-neutral-700">
+                            class="grid gap-3 px-6 py-4 border-b border-gray-200 md:flex md:justify-between md:items-center">
                             <div>
-                                <h2 class="text-xl font-semibold text-gray-800 dark:text-neutral-200">
+                                <h2 class="text-xl font-semibold text-gray-800">
                                     Products
                                 </h2>
-                                <p class="text-sm text-gray-600 dark:text-neutral-400">
+                                <p class="text-sm text-gray-600">
                                     Add products, edit and more.
                                 </p>
                             </div>
@@ -23,7 +23,7 @@
                             <div>
                                 <div class="inline-flex gap-x-2">
                                     <div class="max-w-sm space-y-3">
-                                        <input wire:model.lazy="search" type="text" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-teal-500 focus:ring-teal-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" placeholder="Search Product" />
+                                        <input wire:model.lazy="search" type="text" class="block w-full px-4 py-3 text-sm border-gray-200 rounded-lg focus:border-teal-500 focus:ring-teal-500 disabled:opacity-50 disabled:pointer-events-none" placeholder="Search Product" />
                                     </div>
 
                                     <a class="inline-flex items-center px-3 py-2 text-sm font-medium text-white bg-teal-600 border border-transparent rounded-lg gap-x-2 hover:bg-teal-700 focus:outline-none focus:bg-teal-700 disabled:opacity-50 disabled:pointer-events-none"
@@ -42,13 +42,13 @@
                         <!-- End Header -->
 
                         <!-- Table -->
-                        <table class="min-w-full divide-y divide-gray-200 dark:divide-neutral-700">
-                            <thead class="bg-gray-50 dark:bg-neutral-800">
+                        <table class="min-w-full divide-y divide-gray-200">
+                            <thead class="bg-gray-50">
                                 <tr>
                                     <th scope="col" class="px-5 py-3 text-center ps-6 lg:ps-3 xl:ps-0 pe-6">
                                         <div class="flex items-center justify-center px-5 gap-x-2">
                                             <button wire:click="sortSetting('name')"
-                                                class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200" >
+                                                class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase" >
                                                 Name
                                                     @if ($sortColumn != 'name')
                                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -72,7 +72,7 @@
                                     <th scope="col" class="px-6 py-3 text-center">
                                         <div class="flex items-center justify-center gap-x-2">
                                             <button wire:click="sortSetting('description')"
-                                                class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200" >
+                                                class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase" >
                                                 Description
                                                     @if ($sortColumn != 'description')
                                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -96,7 +96,7 @@
                                     <th scope="col" class="px-6 py-3 text-center">
                                         <div class="flex items-center justify-center gap-x-2">
                                             <button wire:click="sortSetting('price')"
-                                                class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200" >
+                                                class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase" >
                                                 Price
                                                     @if ($sortColumn != 'price')
                                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -120,7 +120,7 @@
                                     <th scope="col" class="px-6 py-3 text-center">
                                         <div class="flex items-center justify-center gap-x-2">
                                             <button wire:click="sortSetting('category_id')"
-                                                class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200" >
+                                                class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase" >
                                                 Category
                                                     @if ($sortColumn != 'category_id')
                                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -144,7 +144,7 @@
                                     <th scope="col" class="px-6 py-3 text-center">
                                         <div class="flex items-center justify-center gap-x-2">
                                             <button wire:click="sortSetting('created_at')"
-                                                class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase dark:text-neutral-200" >
+                                                class="flex items-center text-xs font-semibold tracking-wide text-gray-800 uppercase" >
                                                 Created At
                                                     @if ($sortColumn != 'created_at')
                                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
@@ -169,7 +169,7 @@
                                 </tr>
                             </thead>
 
-                            <tbody class="divide-y divide-gray-200 dark:divide-neutral-700">
+                            <tbody class="divide-y divide-gray-200">
                                @foreach ($products as $product)  
                                     <tr>
                                         <td class="px-5 size-px whitespace-nowrap">
@@ -180,7 +180,7 @@
                                                         alt="Avatar">
                                                     <div class="grow">
                                                         <span
-                                                            class="block text-sm font-semibold text-gray-800 dark:text-neutral-200">{{$product->name}}</span>
+                                                            class="block text-sm font-semibold text-gray-800">{{$product->name}}</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -188,13 +188,13 @@
                                         <td class="h-px px-4 w-72 whitespace-nowrap">
                                             <div class="px-6 py-3">
                                                 <span
-                                                    class="block text-sm font-semibold text-gray-800 dark:text-neutral-200">{{$product->description}}</span>
+                                                    class="block text-sm font-semibold text-gray-800">{{$product->description}}</span>
                                             </div>
                                         </td>
                                         <td class="size-px whitespace-nowrap">
                                             <div class="px-6 py-3">
                                                 <span
-                                                    class="py-1 px-1.5 inline-flex items-center gap-x-1 text-xs font-medium bg-teal-100 text-teal-800 rounded-full dark:bg-teal-500/10 dark:text-teal-500">
+                                                    class="py-1 px-1.5 inline-flex items-center gap-x-1 text-xs font-medium bg-teal-100 text-teal-800 rounded-full">
                                                     <svg class="size-2.5" xmlns="http://www.w3.org/2000/svg" width="16"
                                                         height="16" fill="currentColor" viewBox="0 0 16 16">
                                                         <path
@@ -207,23 +207,23 @@
                                         <td class="size-px whitespace-nowrap">
                                             <div class="px-6 py-3">
                                                 <div class="flex items-center gap-x-3">
-                                                    <span class="text-xs text-gray-500 dark:text-neutral-500">{{ ucfirst($product->category->name)}}</span>
+                                                    <span class="text-xs text-gray-500">{{ ucfirst($product->category->name)}}</span>
                                                 </div>
                                             </div>
                                         </td>
                                         <td class="size-px whitespace-nowrap">
                                             <div class="px-6 py-3">
-                                                <span class="text-sm text-gray-500 dark:text-neutral-500">{{$product->created_at}}</span>
+                                                <span class="text-sm text-gray-500">{{$product->created_at}}</span>
                                             </div>
                                         </td>
                                         <td class="size-px whitespace-nowrap">
                                             <div class="px-6 py-1.5">
-                                                <a wire:navigate class="inline-flex items-center text-sm font-medium text-blue-600 gap-x-1 decoration-2 hover:underline focus:outline-none focus:underline dark:text-blue-500"
+                                                <a wire:navigate class="inline-flex items-center text-sm font-medium text-blue-600 gap-x-1 decoration-2 hover:underline focus:outline-none focus:underline"
                                                 href="{{ url('admin/edit/' . $product->id . '/product') }}">
                                                     Edit
                                                 </a>
 
-                                                {{-- <a class="inline-flex items-center text-sm font-medium text-red-600 cursor-pointer gap-x-1 decoration-2 hover:underline focus:outline-none focus:underline dark:text-red-500" --}}
+                                                {{-- <a class="inline-flex items-center text-sm font-medium text-red-600 cursor-pointer gap-x-1 decoration-2 hover:underline focus:outline-none focus:underline" --}}
                                                 {{-- @click="$dispatch('open-delete-modal', {{$product->id}})" --}}
                                                 {{-- aria-haspopup="dialog" 
                                                 aria-expanded="false" aria-controls="hs-slide-up-animation-modal"  
@@ -235,7 +235,7 @@
                                                     {{-- Delete
                                                 </a> --}}
                                                 <!-- Open Modal Button -->
-                                                <a @click="$dispatch('open-delete-modal', {{$product->id}})" class="inline-flex items-center text-sm font-medium text-red-600 cursor-pointer gap-x-1 decoration-2 hover:underline focus:outline-none focus:underline dark:text-red-500" >
+                                                <a @click="$dispatch('open-delete-modal', {{$product->id}})" class="inline-flex items-center text-sm font-medium text-red-600 cursor-pointer gap-x-1 decoration-2 hover:underline focus:outline-none focus:underline" >
                                                     Delete
                                                 </a>
                                             </div>
@@ -247,9 +247,9 @@
                         <!-- End Table -->
 
                         <!-- Footer -->
-                        <div class="grid gap-3 px-6 py-4 border-t border-gray-200 md:flex md:justify-between md:items-center dark:border-neutral-700">
+                        <div class="grid gap-3 px-6 py-4 border-t border-gray-200 md:flex md:justify-between md:items-center">
                             <div class="max-w-sm space-y-3">
-                                <select class="block px-3 py-2 text-sm border-gray-200 rounded-lg pe-9 focus:border-blue-500 focus:ring-blue-500 dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400" wire:model.change="perPage">
+                                <select class="block px-3 py-2 text-sm border-gray-200 rounded-lg pe-9 focus:border-blue-500 focus:ring-blue-500" wire:model.change="perPage">
                                   <option value="2">2</option>
                                   <option value="3">3</option>
                                   <option value="5">5</option>

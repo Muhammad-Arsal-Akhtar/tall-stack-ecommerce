@@ -3,13 +3,13 @@
     <!-- Card Section -->
     <div class="max-w-4xl px-4 py-10 mx-auto sm:px-6 lg:px-8 lg:py-14">
         <!-- Card -->
-        <div class="p-4 bg-teal-100 shadow rounded-xl sm:p-7 dark:bg-neutral-900">
+        <div class="p-4 bg-teal-100 shadow rounded-xl sm:p-7">
             <form wire:submit="saveNewCategory">
                 <!-- Section -->
                 <div
-                    class="grid gap-2 py-8 border-t border-gray-200 sm:grid-cols-12 sm:gap-4 first:pt-0 last:pb-0 first:border-transparent dark:border-neutral-700 dark:first:border-transparent">
+                    class="grid gap-2 py-8 border-t border-gray-200 sm:grid-cols-12 sm:gap-4 first:pt-0 last:pb-0 first:border-transparent">
                     <div class="sm:col-span-12">
-                        <h2 class="text-lg font-semibold text-gray-800 dark:text-neutral-200">
+                        <h2 class="text-lg font-semibold text-gray-800">
                             Add New Category
                         </h2>
                     </div>
@@ -17,7 +17,7 @@
 
                     <div class="sm:col-span-3">
                         <label for="af-submit-application-full-name"
-                            class="inline-block text-sm font-medium text-gray-500 mt-2.5 dark:text-neutral-500">
+                            class="inline-block text-sm font-medium text-gray-500 mt-2.5">
                             Name of Category
                         </label>
                     </div>
@@ -26,7 +26,7 @@
                     <div class="sm:col-span-9">
                         <div class="sm:flex">
                             <input wire:model="name" id="af-submit-application-full-name" type="text"
-                                class="relative block w-full px-3 py-2 -mt-px text-sm border-gray-200 shadow-sm pe-11 -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-400 dark:placeholder-neutral-500 dark:focus:ring-neutral-600" />
+                                class="relative block w-full px-3 py-2 -mt-px text-sm border-gray-200 shadow-sm pe-11 -ms-px first:rounded-t-lg last:rounded-b-lg sm:first:rounded-s-lg sm:mt-0 sm:first:ms-0 sm:first:rounded-se-none sm:last:rounded-es-none sm:last:rounded-e-lg focus:z-10 focus:border-blue-500 focus:ring-blue-500 disabled:opacity-50 disabled:pointer-events-none" />
                         </div>
                         @error('name')
                           <span class="text-red-500">{{ $message }}</span>
