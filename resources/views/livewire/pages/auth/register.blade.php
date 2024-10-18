@@ -55,7 +55,7 @@ new #[Layout('layouts.guest')] class extends Component
                 <div>
                     <x-input-label for="name" :value="__('Name')" class="block mb-2 text-sm text-gray-800" />
                     <x-text-input wire:model="name" id="name"
-                        class="w-full px-4 py-3 text-sm text-gray-800 bg-white border border-gray-300 rounded-md outline-blue-500"
+                        class="w-full px-4 py-3 text-sm text-gray-800 bg-white border border-gray-300 rounded-md outline-teal-500"
                         type="text" name="name" required autofocus autocomplete="name"
                         placeholder="Enter user name" />
                     <x-input-error :messages="$errors->get('name')" class="mt-2" />
@@ -63,7 +63,7 @@ new #[Layout('layouts.guest')] class extends Component
                 <div>
                     <x-input-label for="email" :value="__('Email')" class="block mb-2 text-sm text-gray-800" />
                     <x-text-input wire:model="email" id="email"
-                        class="w-full px-4 py-3 text-sm text-gray-800 bg-white border border-gray-300 rounded-md outline-blue-500"
+                        class="w-full px-4 py-3 text-sm text-gray-800 bg-white border border-gray-300 rounded-md outline-teal-500"
                         placeholder="Enter email" type="email" name="email" required autocomplete="username" />
                     <x-input-error :messages="$errors->get('email')" class="mt-2" />
                 </div>
@@ -72,7 +72,7 @@ new #[Layout('layouts.guest')] class extends Component
                     <x-input-label for="password" :value="__('Password')" class="block mb-2 text-sm text-gray-800" />
                     <x-text-input wire:model="password" id="password" class="block w-full mt-1" type="password"
                         name="password" required autocomplete="new-password"
-                        class="w-full px-4 py-3 text-sm text-gray-800 bg-white border border-gray-300 rounded-md outline-blue-500"
+                        class="w-full px-4 py-3 text-sm text-gray-800 bg-white border border-gray-300 rounded-md outline-teal-500"
                         placeholder="Enter password" />
                     <x-input-error :messages="$errors->get('password')" class="mt-2" />
                 </div>
@@ -82,7 +82,7 @@ new #[Layout('layouts.guest')] class extends Component
                         class="block mb-2 text-sm text-gray-800" />
 
                     <x-text-input wire:model="password_confirmation" id="password_confirmation"
-                        class="w-full px-4 py-3 text-sm text-gray-800 bg-white border border-gray-300 rounded-md outline-blue-500"
+                        class="w-full px-4 py-3 text-sm text-gray-800 bg-white border border-gray-300 rounded-md outline-teal-500"
                         placeholder="Enter confirm password" type="password" name="password_confirmation" required
                         autocomplete="new-password" />
 
@@ -92,12 +92,12 @@ new #[Layout('layouts.guest')] class extends Component
 
             <div class="!mt-12">
                 <button type="submit"
-                    class="w-full px-4 py-3 text-sm font-semibold tracking-wider text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none">
+                    class="w-full px-4 py-3 text-sm font-semibold tracking-wider text-white bg-teal-600 rounded-md hover:bg-teal-700 focus:outline-none">
                     Create an account
                 </button>
             </div>
             <p class="mt-6 text-sm text-center text-gray-800">Already have an account? <a wire:navigate
-                    href="{{ route('login') }}" class="ml-1 font-semibold text-blue-600 hover:underline">Login here</a>
+                    href="{{ route('login') }}" class="ml-1 font-semibold text-teal-600 hover:underline">Login here</a>
             </p>
 
         </form>

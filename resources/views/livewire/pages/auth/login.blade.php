@@ -46,7 +46,7 @@ new #[Layout('layouts.guest')] class extends Component
                 <div>
                   <x-input-label for="email" :value="__('Email')" class="block mb-2 text-sm text-gray-800" />
                   <div class="relative flex items-center">
-                    <x-text-input wire:model="form.email" id="email" class="w-full px-4 py-3 text-sm text-gray-800 border border-gray-300 rounded-md outline-blue-600" type="email" name="email" required autofocus autocomplete="username" placeholder="Enter user email"  />
+                    <x-text-input wire:model="form.email" id="email" class="w-full px-4 py-3 text-sm text-gray-800 border border-gray-300 rounded-md outline-teal-600" type="email" name="email" required autofocus autocomplete="username" placeholder="Enter user email"  />
                     <svg xmlns="http://www.w3.org/2000/svg" fill="#bbb" stroke="#bbb" class="absolute w-4 h-4 right-4" viewBox="0 0 24 24">
                       <circle cx="10" cy="7" r="6" data-original="#000000"></circle>
                       <path d="M14 15H6a5 5 0 0 0-5 5 3 3 0 0 0 3 3h12a3 3 0 0 0 3-3 5 5 0 0 0-5-5zm8-4h-2.59l.3-.29a1 1 0 0 0-1.42-1.42l-2 2a1 1 0 0 0 0 1.42l2 2a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42l-.3-.29H22a1 1 0 0 0 0-2z" data-original="#000000"></path>
@@ -58,7 +58,7 @@ new #[Layout('layouts.guest')] class extends Component
                 <div>
                   <x-input-label for="password" :value="__('Password')" class="block mb-2 text-sm text-gray-800"  />
                   <div class="relative flex items-center">
-                    <x-text-input wire:model="form.password" id="password" class="w-full px-4 py-3 text-sm text-gray-800 border border-gray-300 rounded-md outline-blue-600"
+                    <x-text-input wire:model="form.password" id="password" class="w-full px-4 py-3 text-sm text-gray-800 border border-gray-300 rounded-md outline-teal-600"
                                     type="password"
                                     name="password"
                                     required autocomplete="current-password" placeholder="Enter password" />
@@ -71,7 +71,7 @@ new #[Layout('layouts.guest')] class extends Component
   
                 <div class="flex flex-wrap items-center justify-between gap-4">
                   <div class="flex items-center">
-                    <input wire:model="form.remember" id="remember" name="remember" type="checkbox" class="w-4 h-4 text-blue-600 border-gray-300 rounded shrink-0 focus:ring-blue-500" />
+                    <input wire:model="form.remember" id="remember" name="remember" type="checkbox" class="w-4 h-4 text-teal-600 border-gray-300 rounded shrink-0 focus:ring-teal-500" />
                     <label for="remember" class="block ml-3 text-sm text-gray-800">
                       Remember me
                     </label>
@@ -79,7 +79,7 @@ new #[Layout('layouts.guest')] class extends Component
 
                   <div class="text-sm">
                     @if (Route::has('password.request'))
-                    <a wire:navigate href="{{ route('password.request') }}" class="font-semibold text-blue-600 hover:underline">
+                    <a wire:navigate href="{{ route('password.request') }}" class="font-semibold text-teal-600 hover:underline">
                       Forgot your password?
                     </a>
                     @endif
@@ -87,12 +87,12 @@ new #[Layout('layouts.guest')] class extends Component
                 </div>
   
                 <div class="!mt-8">
-                  <button type="submit" class="w-full px-4 py-3 text-sm tracking-wide text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none">
+                  <button type="submit" class="w-full px-4 py-3 text-sm tracking-wide text-white bg-teal-600 rounded-lg hover:bg-teal-700 focus:outline-none">
                     Log in
                   </button>
                 </div>
                 
-                <p class="text-gray-800 text-sm !mt-8 text-center">Don't have an account? <a wire:navigate href="{{route('register')}}" class="ml-1 font-semibold text-blue-600 hover:underline whitespace-nowrap">Register here</a></p>
+                <p class="text-gray-800 text-sm !mt-8 text-center">Don't have an account? <a wire:navigate href="{{route('register')}}" class="ml-1 font-semibold text-teal-600 hover:underline whitespace-nowrap">Register here</a></p>
               </form>
             </div>
           </div>

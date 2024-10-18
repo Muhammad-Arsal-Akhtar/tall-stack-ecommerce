@@ -22,7 +22,7 @@
               @else
                 <a
                   class="block w-full px-12 py-3 text-sm font-medium text-white rounded shadow bg-emerald-600 hover:bg-emerald-700 focus:outline-none focus:ring active:bg-emerald-500 sm:w-auto"
-                  href="/auth/login"
+                  href="/login"
                 >
                   Get Started
                 </a>
