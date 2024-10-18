@@ -18,6 +18,6 @@ class AdminMiddleware
         if(auth()->user() && auth()->user()->role == 1){
             return $next($request);
         }
-        return redirect('/auth/login');
+        return redirect('/login');
     }
 }

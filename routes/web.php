@@ -12,15 +12,22 @@ use App\Livewire\EditProduct;
 use App\Livewire\EditCategory;
 use App\Livewire\ShoppingCartDetails;
 use App\Livewire\ContactUs;
+use App\Livewire\Actions\Logout;
 
 
-Route::view('/', 'home');
+Route::view('/', 'home')->name('home');
 Route::get('product-details/{product_id}', ProductDetails::class);
-Route::get('shopping-cart', ShoppingCartDetails::class);
+Route::get('shopping-cart', ShoppingCartDetails::class)->middleware(['auth']);
 Route::get('contact-us', ContactUs::class)->name('contact.us');
 
+Route::get('logout', function(Logout $logout){
+    $logout();
 
-Route::middleware(['admin'])->prefix('admin')->group(function () {
+    return redirect()->route('home');
+});
+
+
+Route::middleware(['auth','admin'])->prefix('admin')->group(function () {
     Route::get('/dashboard', AdminDashboard::class)->name('dashboard');
     Route::get('/products', ManageProduct::class)->name('products');
     Route::get('/orders', ManageOrder::class)->name('orders');
