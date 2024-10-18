@@ -24,7 +24,7 @@ Route::get('logout', function(Logout $logout){
     $logout();
 
     return redirect()->route('home');
-});
+})->name('logout');
 
 
 Route::middleware(['auth','admin'])->prefix('admin')->group(function () {
